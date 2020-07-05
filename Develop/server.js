@@ -1,14 +1,14 @@
-// Requiring necessary npm packages
-var express = require("express");
-var session = require("express-session");
+// Requiring necessary npm packages  GLOBAL  at the top of page
+var express = require("express"); //GLOBAL
+var session = require("express-session");  //GLOBAL
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
-// Setting up port and requiring models for syncing
+// Setting up port and requiring models for syncing  THese are local imports that are files within project, including passport(line 5)
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
 
-// Creating express app and configuring middleware needed for authentication
+// Creating express app and configuring middleware needed for authentication  per each request
 var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
